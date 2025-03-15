@@ -7,7 +7,7 @@ const Project = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/projects") // Adjust based on your API route
+    fetch("https://myportfolio-nyjh.onrender.com/api/projects") // Adjust based on your API route
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error("Error fetching project data:", err));
