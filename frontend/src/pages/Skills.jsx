@@ -5,7 +5,7 @@ const Skills = () => {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/skills") // Adjust based on your API route
+    fetch("https://myportfolio-nyjh.onrender.com/api/skills") // Adjust based on your API route
       .then((res) => res.json())
       .then((data) => setSkills(data))
       .catch((err) => console.error("Error fetching skills data:", err));
