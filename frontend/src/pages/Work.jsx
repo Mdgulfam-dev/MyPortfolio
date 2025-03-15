@@ -5,7 +5,7 @@ const Work = () => {
   const [works, setWorks] = useState([]);
 
   useEffect(() => {
-    fetch(https://myportfolio-nyjh.onrender.com/api/work") // Adjust based on your API route
+    fetch("https://myportfolio-nyjh.onrender.com/api/work") // Adjust based on your API route
       .then((res) => res.json())
       .then((data) => setWorks(data))
       .catch((err) => console.error("Error fetching work data:", err));
