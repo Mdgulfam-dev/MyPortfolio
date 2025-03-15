@@ -22,7 +22,7 @@ const Hero = () => {
 
   // Fetch experience from API
   useEffect(() => {
-    fetch("http://localhost:4000/api/experience")
+    fetch("https://myportfolio-nyjh.onrender.com/api/experience")
       .then((res) => res.json())
       .then((data) => {
         if (data?.months !== undefined) {
