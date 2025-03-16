@@ -24,7 +24,7 @@ const Hero = () => {
   // Fetch experience from API
   useEffect(() => {
     startTransition(() => {
-      fetch("https://myportfolio-nu9t.onrender.com/api/experience")
+      fetch("https://myportfolio-1-cs1j.onrender.com/api/experience")
         .then((res) => {
           if (!res.ok) {
             throw new Error("Failed to fetch experience");

@@ -10,7 +10,7 @@ const Project = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("https://myportfolio-nu9t.onrender.com/api/projects");
+        const res = await fetch("https://myportfolio-1-cs1j.onrender.com/api/projects");
         const data = await res.json();
 
         // Optimize state update using transition

@@ -9,7 +9,7 @@ const Work = () => {
 
   const fetchWorkData = useCallback(async () => {
     try {
-      const response = await fetch("https://myportfolio-nu9t.onrender.com/api/work");
+      const response = await fetch("https://myportfolio-1-cs1j.onrender.com/api/work");
       const data = await response.json();
       setWorks(data);
     } catch (error) {
