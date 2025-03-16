@@ -15,7 +15,7 @@ const Contact = () => {
     setStatus("Sending...");
 
     try {
-      const response = await fetch("https://myportfolio-nyjh.onrender.com/api/contact", {
+      const response = await fetch("https://myportfolio-1-cs1j.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -58,7 +58,7 @@ const Contact = () => {
         </div>
         <div className="flex items-center gap-3 bg-[#1A1A1A] p-4 rounded-lg shadow-md">
           <Phone size={24} className="text-yellow-400" />
-          <a href="tel:+919876543210" className="text-gray-300 hover:text-white">
+          <a href="tel:+919001402531" className="text-gray-300 hover:text-white">
             +91 900 140 2531 
           </a>
         </div>

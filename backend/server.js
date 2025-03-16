@@ -61,7 +61,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://my-portfolio-frontend-15jfwzjnb-md-gulfams-projects.vercel.app", 
+  "https://my-portfolio-frontend-15jfwzjnb-md-gulfams-projects.vercel.app",
   "https://my-portfolio-frontend-ten.vercel.app"  // ✅ Correct frontend URL
 ];
 
