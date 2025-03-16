@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { motion } from "framer-motion";
 import { Download, Briefcase } from "lucide-react";
-import Typewriter from "typewriter-effect";
+import { Typewriter } from "react-simple-typewriter";
 import { useNavigate } from "react-router-dom";
 import profileImage from "../assets/profileImage.png";
 
@@ -9,6 +9,7 @@ const Hero = () => {
   const navigate = useNavigate();
   const [experience, setExperience] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isPending, startTransition] = useTransition();
 
   // Convert months into "Years & Months" format
   const formatExperience = (months) => {
@@ -22,34 +23,39 @@ const Hero = () => {
 
   // Fetch experience from API
   useEffect(() => {
-    fetch("https://myportfolio-nyjh.onrender.com/api/experience")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.months !== undefined) {
-          setExperience(data.months);
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching experience:", err);
-        setLoading(false);
-      });
+    startTransition(() => {
+      fetch("https://myportfolio-nyjh.onrender.com/api/experience")
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("Failed to fetch experience");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          setExperience(data?.months ?? null);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error("Error fetching experience:", err);
+          setLoading(false);
+        });
+    });
   }, []);
 
   return (
-    <section className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-[#0A0A0A] to-gray-900 text-white px-6 sm:px-8 overflow-hidden">
+    <section className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-[#0A0A0A] to-gray-900 text-white px-6 sm:px-8 sm:pt-20 overflow-hidden">
       {/* Background Glows */}
       <motion.div
         className="absolute top-[-100px] left-[-100px] w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] bg-blue-500 opacity-30 blur-[120px] rounded-full"
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      ></motion.div>
+      />
 
       <motion.div
         className="absolute bottom-[-100px] right-[-100px] w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] bg-purple-500 opacity-30 blur-[120px] rounded-full"
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      ></motion.div>
+      />
 
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl w-full z-10">
         {/* Left Side - Text */}
@@ -63,13 +69,7 @@ const Hero = () => {
             Hi, I'm Md Gulfam
             <br />
             <span className="inline-block">
-              <Typewriter
-                options={{
-                  strings: ["A Full-Stack Developer", "MERN Stack Enthusiast"],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
+              <Typewriter words={["A Full-Stack Developer", "MERN Stack Enthusiast"]} loop={true} cursor cursorStyle="|" />
             </span>
           </motion.h1>
 
@@ -85,15 +85,14 @@ const Hero = () => {
               className="p-6 bg-[#1A1A1A] text-white border border-yellow-400/50 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 relative overflow-hidden"
               whileHover={{ scale: 1.1 }}
             >
-              {/* Neon Glow Effect */}
               <motion.div
                 className="absolute inset-0 bg-yellow-400 opacity-10 blur-[50px] rounded-xl"
                 whileHover={{ opacity: 0.2 }}
-              ></motion.div>
+              />
 
               <Briefcase size={32} className="text-yellow-400 mx-auto mb-3" />
               <p className="text-2xl sm:text-3xl font-semibold text-center">
-                {loading ? "Loading..." : formatExperience(experience)}
+                {isPending || loading ? "Loading..." : formatExperience(experience)}
               </p>
               <p className="text-sm sm:text-md text-center text-gray-400">Experience</p>
             </motion.div>
@@ -107,11 +106,10 @@ const Hero = () => {
             >
               <Download size={22} />
               Download Resume
-              {/* Background Shine Effect */}
               <motion.div
                 className="absolute inset-0 bg-white/10 blur-lg opacity-0 transition-opacity duration-500"
                 whileHover={{ opacity: 0.2 }}
-              ></motion.div>
+              />
             </motion.a>
           </motion.div>
         </div>
@@ -124,9 +122,6 @@ const Hero = () => {
           transition={{ duration: 1.2 }}
           whileHover={{ scale: 1.05, rotate: 2, transition: { duration: 0.3 } }}
         >
-          {/* Glow Effect */}
-          <div className="absolute top-[-30px] right-[-30px] w-[200px] sm:w-[250px] h-[200px] sm:h-[250px] bg-yellow-400 opacity-30 blur-[80px] sm:blur-[100px] rounded-full mix-blend-screen z-[-1]"></div>
-
           <img
             src={profileImage}
             alt="Md Gulfam - Full Stack Developer"
