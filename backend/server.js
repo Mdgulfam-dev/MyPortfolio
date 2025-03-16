@@ -19,7 +19,16 @@ connectDB(); // Connect to MongoDB
 
 const app = express();
 // app.use(cors());
-app.use(cors({ origin: "http://localhost:5173" }));
+// app.use(cors({ origin: "http://localhost:5173" }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://yourfrontenddomain.com"], // Allow local and deployed frontend
+    credentials: true, // Allow cookies and auth headers
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed request methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  })
+);
+
 app.use(express.json());
 
 // Use API Routes
