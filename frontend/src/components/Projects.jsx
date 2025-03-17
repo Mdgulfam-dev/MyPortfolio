@@ -79,8 +79,7 @@ const Project = () => {
               >
                 {/* Neon Glow Effect on Hover */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 hover:opacity-20 transition-opacity duration-500 rounded-2xl"
-                  whileHover={{ opacity: 0.4 }}
+                   className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 hover:opacity-20 transition-opacity duration-500 rounded-2xl pointer-events-none"
                 ></motion.div>
 
                 {/* Default Project Icon */}

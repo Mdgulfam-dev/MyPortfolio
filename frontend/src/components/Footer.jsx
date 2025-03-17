@@ -63,8 +63,8 @@ const Footer = () => {
           <div className="flex justify-center md:justify-start gap-6 mt-3">
             {[
               { icon: Mail, link: "mailto:mdgulfam0505@gmail.com" },
-              { icon: Linkedin, link: "https://linkedin.com/in/mdgulfam" },
-              { icon: Github, link: "https://github.com/mdgulfam" },
+              { icon: Linkedin, link: "https://www.linkedin.com/in/md-gulfam-364ab5212 " },
+              { icon: Github, link: "https://github.com/Mdgulfam-dev" },
             ].map(({ icon: Icon, link }, index) => (
               <a
                 key={index}
