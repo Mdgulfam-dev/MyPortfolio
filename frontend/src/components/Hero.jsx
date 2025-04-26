@@ -137,7 +137,7 @@
 
 import { useEffect, useState, useTransition } from "react";
 import { motion } from "framer-motion";
-import { Download, Briefcase } from "lucide-react";
+import { Download, Briefcase, Link } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import { useNavigate } from "react-router-dom";
 import profileImage from "../assets/profileImage.png";
@@ -154,7 +154,9 @@ const Hero = () => {
     const years = Math.floor(totalMonths / 12);
     const months = totalMonths % 12;
     return years > 0
-      ? `${years} yr${years > 1 ? "s" : ""}${months > 0 ? ` ${months} month${months > 1 ? "s" : ""}` : ""}`
+      ? `${years} yr${years > 1 ? "s" : ""}${
+          months > 0 ? ` ${months} month${months > 1 ? "s" : ""}` : ""
+        }`
       : `${months} month${months > 1 ? "s" : ""}`;
   };
 
@@ -206,42 +208,51 @@ const Hero = () => {
             Hi, I'm Md Gulfam
             <br />
             <span className="inline-block">
-              <Typewriter words={["A Full-Stack Developer", "MERN Stack Enthusiast"]} loop={true} cursor cursorStyle="|" />
+              <Typewriter
+                words={["A Full-Stack Developer", "MERN Stack Enthusiast"]}
+                loop={true}
+                cursor
+                cursorStyle="|"
+              />
             </span>
           </motion.h1>
 
           {/* Experience + Resume Section */}
           <motion.div
-            className="mt-10 flex flex-wrap gap-6 justify-center md:justify-start"
+            className="mt-10 flex flex-wrap  gap-6 justify-center md:justify-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 1 }}
           >
             {/* Experience Card */}
+            
             <motion.div
-              className="p-6 bg-[#1A1A1A] text-white border border-yellow-400/50 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+              className="p-4 bg-[#1A1A1A] text-white border border-yellow-400/50 rounded-lg shadow-md hover:scale-105 transition-transform duration-300 relative overflow-hidden w-40 sm:w-48"
               whileHover={{ scale: 1.1 }}
             >
               <motion.div
-                className="absolute inset-0 bg-yellow-400 opacity-10 blur-[50px] rounded-xl"
+                className="absolute inset-0 bg-yellow-400 opacity-10 blur-[40px] rounded-lg"
                 whileHover={{ opacity: 0.2 }}
               />
 
-              <Briefcase size={32} className="text-yellow-400 mx-auto mb-3" />
-              <p className="text-2xl sm:text-3xl font-semibold text-center">
-                {isPending || loading ? "Loading..." : formatExperience(experience)}
+              <Briefcase size={24} className="text-yellow-400 mx-auto mb-2" />
+              <p className="text-xl sm:text-2xl font-semibold text-center">
+                {isPending || loading
+                  ? "Loading..."
+                  : formatExperience(experience)}
               </p>
-              <p className="text-sm sm:text-md text-center text-gray-400">Experience</p>
+              <p className="text-xs sm:text-sm text-center text-gray-400">
+                Experience
+              </p>
             </motion.div>
 
-            {/* Resume Download Button */}
             <motion.a
               href="/resume.pdf"
-              download="Md_Gulfam_Resume.pdf"
-              className="flex items-center gap-3 px-6 py-3 bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+              download="Md_Gulfam.pdf"
+              className="flex items-center gap-2 px-5 py-2 bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:scale-105 transition-transform duration-300 relative overflow-hidden text-sm sm:text-base"
               whileHover={{ scale: 1.1 }}
             >
-              <Download size={22} />
+              <Download size={20} />
               Download Resume
               <motion.div
                 className="absolute inset-0 bg-white/10 blur-lg opacity-0 transition-opacity duration-500"
@@ -249,6 +260,65 @@ const Hero = () => {
               />
             </motion.a>
           </motion.div>
+         
+          {/* Social Links */}
+          <div className="flex gap-4 mt-6 justify-center md:justify-start">
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/md-gulfam-364ab5212 "
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-blue-600 rounded-full hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                alt="LinkedIn"
+                className="w-6 h-6"
+              />
+            </a>
+
+            {/* GitHub */}
+            <a
+              href="https://github.com/Mdgulfam-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-gray-100 rounded-full hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                alt="GitHub"
+                className="w-6 h-6"
+              />
+            </a>
+
+            {/* LeetCode */}
+            <a
+              href="https://leetcode.com/u/MdGulfam/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-yellow-300 rounded-full hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+                alt="LeetCode"
+                className="w-6 h-6"
+              />
+            </a>
+
+            {/* GeeksforGeeks */}
+            <a
+              href="https://www.geeksforgeeks.org/user/mdgulfam0505/?_gl=1*2y2itf*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw5azABhD1ARIsAA0WFUEAxk0DzxKAw10HeAHNzlmwYEFC248fowOP86tGv5uth10xzaVY-FEaAg14EALw_wcB&gbraid=0AAAAAC9yBkCAP0ZTgC_yHK3fkYC2oeOxK"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-white rounded-full hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg"
+                alt="GFG"
+                className="w-6 h-6 "
+              />
+            </a>
+          </div>
         </div>
 
         {/* Right Side - Profile Image */}
