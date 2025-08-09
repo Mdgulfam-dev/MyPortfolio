@@ -1433,10 +1433,205 @@
 
 
 
+// import { motion, useReducedMotion } from "framer-motion";
+// import { Download, Github, Linkedin } from "lucide-react";
+// import { Link } from "react-router-dom";
+// import profileImage from "../assets/profileImage.png";
+// import leetcodeIcon from "../assets/leetcode.png";
+// import gfgIcon from "../assets/gfg.png";
+
+// const Hero = () => {
+//   const shouldReduceMotion = useReducedMotion();
+
+//   return (
+//     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-[#0B0B0F] to-gray-900 text-white overflow-hidden pt-20 sm:pt-32 px-4 sm:px-6 lg:px-12">
+//       {/* Animated Background Blobs */}
+//       <motion.div
+//         className="absolute top-[-100px] left-[-120px] w-[400px] h-[400px] sm:w-[400px] sm:h-[400px] bg-gradient-to-r from-yellow-400 to-orange-500 opacity-30 rounded-full blur-[140px] z-0 will-change-transform"
+//         animate={
+//           shouldReduceMotion
+//             ? {}
+//             : { scale: [1, 1.15, 1], opacity: [0.25, 0.4, 0.25] }
+//         }
+//         transition={{ duration: 15, repeat: Infinity }}
+//       />
+//       <motion.div
+//         className="absolute bottom-[-150px] right-[-130px] w-[450px] h-[450px] sm:w-[450px] sm:h-[450px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full blur-[140px] z-0 will-change-transform"
+//         animate={
+//           shouldReduceMotion
+//             ? {}
+//             : { scale: [1, 1.1, 1], opacity: [0.25, 0.4, 0.25] }
+//         }
+//         transition={{ duration: 18, repeat: Infinity }}
+//       />
+
+//       {/* Social Icons Sidebar */}
+//       <div className="fixed top-1/2 left-6 -translate-y-1/2 flex flex-col gap-4 z-20 backdrop-blur-lg bg-black/30 p-3 rounded-full shadow-lg border border-white/10">
+//         <a
+//           href="https://github.com/Mdgulfam-dev"
+//           target="_blank"
+//           rel="noreferrer"
+//           aria-label="GitHub Profile"
+//         >
+//           <Github
+//             className="text-yellow-400 hover:text-yellow-300 transition-all hover:scale-110"
+//             size={24}
+//           />
+//         </a>
+//         <a
+//           href="https://www.linkedin.com/in/md-gulfam-364ab5212/"
+//           target="_blank"
+//           rel="noreferrer"
+//           aria-label="LinkedIn Profile"
+//         >
+//           <Linkedin
+//             className="text-yellow-400 hover:text-yellow-300 transition-all hover:scale-110"
+//             size={24}
+//           />
+//         </a>
+//         <a
+//           href="https://leetcode.com/u/MdGulfam/"
+//           target="_blank"
+//           rel="noreferrer"
+//           aria-label="LeetCode Profile"
+//         >
+//           <img
+//             src={leetcodeIcon}
+//             alt="LeetCode"
+//             className="w-6 h-6 hover:scale-110 transition-transform"
+//             loading="lazy"
+//           />
+//         </a>
+//         <a
+//           href="https://www.geeksforgeeks.org/user/mdgulfam0505/"
+//           target="_blank"
+//           rel="noreferrer"
+//           aria-label="GeeksforGeeks Profile"
+//         >
+//           <img
+//             src={gfgIcon}
+//             alt="GFG"
+//             className="w-6 h-6 hover:scale-110 transition-transform"
+//             loading="lazy"
+//           />
+//         </a>
+//       </div>
+
+//       {/* Grid Layout */}
+//       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+//         {/* Left Text Content */}
+//         <div className="space-y-6 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+//           <motion.h1
+//             className="
+//               text-3xl 
+//               sm:text-4xl 
+//               md:text-5xl 
+//               lg:text-6xl 
+//               font-extrabold 
+//               text-transparent 
+//               bg-clip-text 
+//               bg-gradient-to-r 
+//               from-yellow-400 
+//               to-orange-500
+//             "
+//             initial={{ opacity: 0, y: 30 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 1 }}
+//           >
+//             Software Engineer
+//           </motion.h1>
+
+//           <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
+//             I design and develop high-performance web & mobile applications
+//             using modern stacks like React, Node.js, and MongoDB. Specializing
+//             in AI/ML-powered solutions, I handle end-to-end development — from
+//             intelligent system design to secure deployment on AWS. Let’s create
+//             something powerful together.
+//           </p>
+
+//           {/* CTA Buttons */}
+//           <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+//             <motion.a
+//               whileHover={{ scale: 1.05 }}
+//               href="/resume.pdf"
+//               download="Md_Gulfam.pdf"
+//               className="px-5 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold rounded-xl shadow-lg hover:shadow-yellow-500/50 transition-all"
+//             >
+//               <Download size={18} className="inline-block mr-2" />
+//               Resume
+//             </motion.a>
+//             <motion.div
+//               whileHover={{ scale: 1.05 }}
+//               className="px-5 py-3 border border-yellow-500/40 bg-black/40 text-yellow-300 rounded-xl backdrop-blur-md hover:bg-yellow-500/10 transition-all"
+//             >
+//               <Link to="/work">View Projects</Link>
+//             </motion.div>
+//           </div>
+//         </div>
+
+//         {/* Right Profile Card */}
+//         <motion.div
+//           initial={{ opacity: 0, x: 50 }}
+//           animate={{ opacity: 1, x: 0 }}
+//           transition={{ duration: 1 }}
+//           className="flex justify-center lg:justify-end"
+//         >
+//           <div
+//             className="
+//               relative 
+//               bg-gradient-to-b 
+//               from-gray-900 
+//               via-gray-800 
+//               to-black 
+//               p-6 
+//               rounded-3xl 
+//               shadow-2xl 
+//               border border-yellow-400/20 
+//               overflow-hidden
+//               w-[250px] 
+//               sm:w-[300px] 
+//               md:w-[350px] 
+//               lg:w-[440px]
+//             "
+//           >
+//             <motion.div
+//               className="relative rounded-full p-2 mx-auto"
+//               style={{
+//                 backgroundColor: "#ffffff",
+//                 boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+//                 width: "calc(100% - 2rem)", // keeps padding space inside container
+//                 aspectRatio: "1 / 1",
+//               }}
+//               animate={
+//                 shouldReduceMotion
+//                   ? {}
+//                   : { y: [0, -10, 0] }
+//               }
+//               transition={{ duration: 6, repeat: Infinity }}
+//             >
+//               <img
+//                 src={profileImage}
+//                 alt="Md Gulfam"
+//                 className="rounded-full object-cover w-full h-full"
+//                 loading="lazy"
+//                 decoding="async"
+//                 draggable={false}
+//               />
+//             </motion.div>
+//           </div>
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
 import { motion, useReducedMotion } from "framer-motion";
 import { Download, Github, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-import profileImage from "../assets/profileImage.png";
 import leetcodeIcon from "../assets/leetcode.png";
 import gfgIcon from "../assets/gfg.png";
 
@@ -1444,62 +1639,63 @@ const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-[#0B0B0F] to-gray-900 text-white overflow-hidden pt-20 sm:pt-32 px-4 sm:px-6 lg:px-12">
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-black via-[#0B0B0F] to-gray-900 text-white overflow-hidden px-8 sm:px-12 lg:px-20 py-24">
+      {/* Background subtle grid pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_1px,_transparent_1px)] bg-[length:40px_40px] pointer-events-none z-0" />
+
       {/* Animated Background Blobs */}
       <motion.div
-        className="absolute top-[-100px] left-[-120px] w-[400px] h-[400px] sm:w-[400px] sm:h-[400px] bg-gradient-to-r from-yellow-400 to-orange-500 opacity-30 rounded-full blur-[140px] z-0 will-change-transform"
+        className="absolute top-[-80px] left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-gradient-to-r from-yellow-400 to-orange-500 opacity-20 rounded-full blur-[120px] will-change-transform z-0"
         animate={
           shouldReduceMotion
             ? {}
-            : { scale: [1, 1.15, 1], opacity: [0.25, 0.4, 0.25] }
+            : { scale: [1, 1.1, 1], opacity: [0.3, 0.45, 0.3] }
         }
-        transition={{ duration: 15, repeat: Infinity }}
+        transition={{ duration: 20, repeat: Infinity }}
       />
       <motion.div
-        className="absolute bottom-[-150px] right-[-130px] w-[450px] h-[450px] sm:w-[450px] sm:h-[450px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full blur-[140px] z-0 will-change-transform"
+        className="absolute bottom-[-140px] left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-gradient-to-r from-purple-600 to-pink-500 opacity-20 rounded-full blur-[120px] will-change-transform z-0"
         animate={
           shouldReduceMotion
             ? {}
-            : { scale: [1, 1.1, 1], opacity: [0.25, 0.4, 0.25] }
+            : { scale: [1, 1.07, 1], opacity: [0.3, 0.45, 0.3] }
         }
-        transition={{ duration: 18, repeat: Infinity }}
+        transition={{ duration: 22, repeat: Infinity }}
       />
 
       {/* Social Icons Sidebar */}
-      <div className="fixed top-1/2 left-6 -translate-y-1/2 flex flex-col gap-4 z-20 backdrop-blur-lg bg-black/30 p-3 rounded-full shadow-lg border border-white/10">
+      <nav className="flex gap-8 z-10 mb-16">
         <a
           href="https://github.com/Mdgulfam-dev"
           target="_blank"
           rel="noreferrer"
           aria-label="GitHub Profile"
+          className="text-yellow-400 hover:text-yellow-300 transition-transform hover:scale-125"
         >
-          <Github
-            className="text-yellow-400 hover:text-yellow-300 transition-all hover:scale-110"
-            size={24}
-          />
+          <Github size={28} />
         </a>
         <a
           href="https://www.linkedin.com/in/md-gulfam-364ab5212/"
           target="_blank"
           rel="noreferrer"
           aria-label="LinkedIn Profile"
+          className="text-yellow-400 hover:text-yellow-300 transition-transform hover:scale-125"
         >
-          <Linkedin
-            className="text-yellow-400 hover:text-yellow-300 transition-all hover:scale-110"
-            size={24}
-          />
+          <Linkedin size={28} />
         </a>
         <a
           href="https://leetcode.com/u/MdGulfam/"
           target="_blank"
           rel="noreferrer"
           aria-label="LeetCode Profile"
+          className="transition-transform hover:scale-125"
         >
           <img
             src={leetcodeIcon}
             alt="LeetCode"
-            className="w-6 h-6 hover:scale-110 transition-transform"
+            className="w-8 h-8"
             loading="lazy"
+            draggable={false}
           />
         </a>
         <a
@@ -1507,118 +1703,71 @@ const Hero = () => {
           target="_blank"
           rel="noreferrer"
           aria-label="GeeksforGeeks Profile"
+          className="transition-transform hover:scale-125"
         >
           <img
             src={gfgIcon}
             alt="GFG"
-            className="w-6 h-6 hover:scale-110 transition-transform"
+            className="w-8 h-8"
             loading="lazy"
+            draggable={false}
           />
         </a>
-      </div>
+      </nav>
 
-      {/* Grid Layout */}
-      <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Text Content */}
-        <div className="space-y-6 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-          <motion.h1
-            className="
-              text-3xl 
-              sm:text-4xl 
-              md:text-5xl 
-              lg:text-6xl 
-              font-extrabold 
-              text-transparent 
-              bg-clip-text 
-              bg-gradient-to-r 
-              from-yellow-400 
-              to-orange-500
-            "
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            Software Engineer
-          </motion.h1>
-
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
-            I design and develop high-performance web & mobile applications
-            using modern stacks like React, Node.js, and MongoDB. Specializing
-            in AI/ML-powered solutions, I handle end-to-end development — from
-            intelligent system design to secure deployment on AWS. Let’s create
-            something powerful together.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              href="/resume.pdf"
-              download="Md_Gulfam.pdf"
-              className="px-5 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold rounded-xl shadow-lg hover:shadow-yellow-500/50 transition-all"
-            >
-              <Download size={18} className="inline-block mr-2" />
-              Resume
-            </motion.a>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="px-5 py-3 border border-yellow-500/40 bg-black/40 text-yellow-300 rounded-xl backdrop-blur-md hover:bg-yellow-500/10 transition-all"
-            >
-              <Link to="/work">View Projects</Link>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Right Profile Card */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col items-center max-w-4xl text-center space-y-10 px-4 sm:px-8">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="flex justify-center lg:justify-end"
+          className="text-6xl sm:text-7xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent tracking-wide leading-tight relative"
         >
-          <div
-            className="
-              relative 
-              bg-gradient-to-b 
-              from-gray-900 
-              via-gray-800 
-              to-black 
-              p-6 
-              rounded-3xl 
-              shadow-2xl 
-              border border-yellow-400/20 
-              overflow-hidden
-              w-[250px] 
-              sm:w-[300px] 
-              md:w-[350px] 
-              lg:w-[440px]
-            "
+          Software Engineer
+          {/* Animated underline */}
+          <motion.span
+            layoutId="underline"
+            className="block h-1 w-36 mt-4 bg-yellow-400 rounded-full origin-left mx-auto"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          />
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 0.9, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="max-w-3xl text-gray-300 text-xl sm:text-2xl leading-relaxed font-light tracking-wide"
+        >
+          I design and develop high-performance web & mobile applications using
+          modern stacks like React, Node.js, and MongoDB. Specializing in
+          AI/ML-powered solutions, I handle end-to-end development — from
+          intelligent system design to secure deployment on AWS. Let’s create
+          something powerful together.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="flex flex-wrap gap-8 justify-center"
+        >
+          <a
+            href="/resume.pdf"
+            download="Md_Gulfam.pdf"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold rounded-full shadow-xl hover:shadow-yellow-500/70 transition-all transform hover:scale-110"
           >
-            <motion.div
-              className="relative rounded-full p-2 mx-auto"
-              style={{
-                backgroundColor: "#ffffff",
-                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-                width: "calc(100% - 2rem)", // keeps padding space inside container
-                aspectRatio: "1 / 1",
-              }}
-              animate={
-                shouldReduceMotion
-                  ? {}
-                  : { y: [0, -10, 0] }
-              }
-              transition={{ duration: 6, repeat: Infinity }}
-            >
-              <img
-                src={profileImage}
-                alt="Md Gulfam"
-                className="rounded-full object-cover w-full h-full"
-                loading="lazy"
-                decoding="async"
-                draggable={false}
-              />
-            </motion.div>
-          </div>
+            <Download size={24} className="mr-4" />
+            Resume
+          </a>
+          <Link
+            to="/work"
+            className="inline-flex items-center px-8 py-4 border-2 border-yellow-500/60 text-yellow-400 rounded-full backdrop-blur-md hover:bg-yellow-500/25 transition-all transform hover:scale-110"
+          >
+            View Projects
+          </Link>
         </motion.div>
       </div>
     </section>
