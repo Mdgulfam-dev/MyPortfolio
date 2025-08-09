@@ -76,6 +76,7 @@
 
 
 import { motion } from "framer-motion";
+import profileImage from "../assets/profileImage.png";
 
 const About = () => {
   return (
@@ -101,7 +102,7 @@ const About = () => {
           transition={{ duration: 0.9 }}
         >
           <img
-            src="https://i.pravatar.cc/300?img=12" // Replace with your actual image URL
+            src={profileImage}// Replace with your actual image URL
             alt="Md Gulfam"
             className="w-56 h-56 object-cover rounded-full"
           />
