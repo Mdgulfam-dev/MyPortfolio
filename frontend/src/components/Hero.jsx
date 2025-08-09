@@ -1277,7 +1277,163 @@
 
 // <-------Testing------->
 
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+// import { Download, Github, Linkedin } from "lucide-react";
+// import { Link } from "react-router-dom";
+// import profileImage from "../assets/profileImage.png";
+// import leetcodeIcon from "../assets/leetcode.png";
+// import gfgIcon from "../assets/gfg.png";
+
+// const Hero = () => {
+//   return (
+//     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-[#0B0B0F] to-gray-900 text-white overflow-hidden pt-20 sm:pt-32">
+//       {/* Animated Background Blobs */}
+//       <motion.div
+//         className="absolute top-[-100px] left-[-120px] w-[400px] h-[400px] bg-gradient-to-r from-yellow-400 to-orange-500 opacity-30 rounded-full blur-[140px] z-0"
+//         animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.4, 0.25] }}
+//         transition={{ duration: 15, repeat: Infinity }}
+//       />
+//       <motion.div
+//         className="absolute bottom-[-150px] right-[-130px] w-[450px] h-[450px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full blur-[140px] z-0"
+//         animate={{ scale: [1, 1.1, 1], opacity: [0.25, 0.4, 0.25] }}
+//         transition={{ duration: 18, repeat: Infinity }}
+//       />
+
+//       {/* Social Icons Sidebar */}
+//       <div className="fixed top-1/2 left-6 -translate-y-1/2 flex flex-col gap-4 z-20 backdrop-blur-lg bg-black/30 p-3 rounded-full shadow-lg border border-white/10">
+//         <a
+//           href="https://github.com/Mdgulfam-dev"
+//           target="_blank"
+//           rel="noreferrer"
+//         >
+//           <Github
+//             className="text-yellow-400 hover:text-yellow-300 transition-all hover:scale-110"
+//             size={24}
+//           />
+//         </a>
+//         <a
+//           href="https://www.linkedin.com/in/md-gulfam-364ab5212/"
+//           target="_blank"
+//           rel="noreferrer"
+//         >
+//           <Linkedin
+//             className="text-yellow-400 hover:text-yellow-300 transition-all hover:scale-110"
+//             size={24}
+//           />
+//         </a>
+//         <a
+//           href="https://leetcode.com/u/MdGulfam/"
+//           target="_blank"
+//           rel="noreferrer"
+//         >
+//           <img
+//             src={leetcodeIcon}
+//             alt="LeetCode"
+//             className="w-6 h-6 hover:scale-110 transition-all"
+//           />
+//         </a>
+//         <a
+//           href="https://www.geeksforgeeks.org/user/mdgulfam0505/"
+//           target="_blank"
+//           rel="noreferrer"
+//         >
+//           <img
+//             src={gfgIcon}
+//             alt="GFG"
+//             className="w-6 h-6 hover:scale-110 transition-all"
+//           />
+//         </a>
+//       </div>
+
+//       {/* Grid Layout */}
+//       <div className="relative z-10 w-full max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-center">
+//         {/* Left Text Content */}
+//         <div className="space-y-6">
+//           <motion.h1
+//             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500"
+//             initial={{ opacity: 0, y: 30 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 1 }}
+//           >
+//             Software Engineer
+//           </motion.h1>
+
+//           <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
+//             I design and develop high-performance web & mobile applications
+//             using modern stacks like React, Node.js, and MongoDB. Specializing
+//             in AI/ML-powered solutions, I handle end-to-end development — from
+//             intelligent system design to secure deployment on AWS. Let’s create
+//             something powerful together.
+//           </p>
+
+//           {/* CTA Buttons */}
+//           <div className="flex flex-wrap gap-4">
+//             <motion.a
+//               whileHover={{ scale: 1.05 }}
+//               href="/resume.pdf"
+//               download="Md_Gulfam.pdf"
+//               className="px-5 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold rounded-xl shadow-lg hover:shadow-yellow-500/50 transition-all"
+//             >
+//               <Download size={18} className="inline-block mr-2" />
+//               Resume
+//             </motion.a>
+//             <motion.div
+//               whileHover={{ scale: 1.05 }}
+//               className="px-5 py-3 border border-yellow-500/40 bg-black/40 text-yellow-300 rounded-xl backdrop-blur-md hover:bg-yellow-500/10 transition-all"
+//             >
+//               <Link to="/work">View Projects</Link>
+//             </motion.div>
+//           </div>
+//         </div>
+
+//         {/* Right Profile Card */}
+//         <motion.div
+//           initial={{ opacity: 0, x: 50 }}
+//           animate={{ opacity: 1, x: 0 }}
+//           transition={{ duration: 1 }}
+//           className="relative flex justify-center lg:justify-end"
+//         >
+//           <div className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-black p-6 rounded-3xl shadow-2xl border border-yellow-400/20 overflow-hidden w-[350px] sm:w-[400px] lg:w-[440px]">
+//             {/* Decorative Gradient Ring */}
+//             <div className="absolute inset-0 rounded-3xl border-2 border-transparent "></div>
+
+//             {/* Profile Image */}
+//             {/* <motion.img
+//               src={profileImage}
+//               alt="Md Gulfam"
+//               className="relative z-10 w-full rounded-3xl object-cover"
+//               animate={{ y: [0, -10, 0] }}
+//               transition={{ duration: 6, repeat: Infinity }}
+//             /> */}
+
+//             {/* Profile Image */}
+//             <motion.div
+//               className="relative z-10 w-full rounded-full p-2"
+//               style={{
+//                 backgroundColor: "#ffffff", // choose a contrasting color (can replace with hex or Tailwind)
+//                 boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+//               }}
+//               animate={{ y: [0, -10, 0] }}
+//               transition={{ duration: 6, repeat: Infinity }}
+//             >
+//               <img
+//                 src={profileImage}
+//                 alt="Md Gulfam"
+//                 className="rounded-full object-cover w-full h-full"
+//               />
+//             </motion.div>
+//           </div>
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Hero;
+
+
+
+import { motion, useReducedMotion } from "framer-motion";
 import { Download, Github, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import profileImage from "../assets/profileImage.png";
@@ -1285,17 +1441,27 @@ import leetcodeIcon from "../assets/leetcode.png";
 import gfgIcon from "../assets/gfg.png";
 
 const Hero = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-[#0B0B0F] to-gray-900 text-white overflow-hidden pt-20 sm:pt-32">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-[#0B0B0F] to-gray-900 text-white overflow-hidden pt-20 sm:pt-32 px-4 sm:px-6 lg:px-12">
       {/* Animated Background Blobs */}
       <motion.div
-        className="absolute top-[-100px] left-[-120px] w-[400px] h-[400px] bg-gradient-to-r from-yellow-400 to-orange-500 opacity-30 rounded-full blur-[140px] z-0"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.4, 0.25] }}
+        className="absolute top-[-100px] left-[-120px] w-[400px] h-[400px] sm:w-[400px] sm:h-[400px] bg-gradient-to-r from-yellow-400 to-orange-500 opacity-30 rounded-full blur-[140px] z-0 will-change-transform"
+        animate={
+          shouldReduceMotion
+            ? {}
+            : { scale: [1, 1.15, 1], opacity: [0.25, 0.4, 0.25] }
+        }
         transition={{ duration: 15, repeat: Infinity }}
       />
       <motion.div
-        className="absolute bottom-[-150px] right-[-130px] w-[450px] h-[450px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full blur-[140px] z-0"
-        animate={{ scale: [1, 1.1, 1], opacity: [0.25, 0.4, 0.25] }}
+        className="absolute bottom-[-150px] right-[-130px] w-[450px] h-[450px] sm:w-[450px] sm:h-[450px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full blur-[140px] z-0 will-change-transform"
+        animate={
+          shouldReduceMotion
+            ? {}
+            : { scale: [1, 1.1, 1], opacity: [0.25, 0.4, 0.25] }
+        }
         transition={{ duration: 18, repeat: Infinity }}
       />
 
@@ -1305,6 +1471,7 @@ const Hero = () => {
           href="https://github.com/Mdgulfam-dev"
           target="_blank"
           rel="noreferrer"
+          aria-label="GitHub Profile"
         >
           <Github
             className="text-yellow-400 hover:text-yellow-300 transition-all hover:scale-110"
@@ -1315,6 +1482,7 @@ const Hero = () => {
           href="https://www.linkedin.com/in/md-gulfam-364ab5212/"
           target="_blank"
           rel="noreferrer"
+          aria-label="LinkedIn Profile"
         >
           <Linkedin
             className="text-yellow-400 hover:text-yellow-300 transition-all hover:scale-110"
@@ -1325,32 +1493,47 @@ const Hero = () => {
           href="https://leetcode.com/u/MdGulfam/"
           target="_blank"
           rel="noreferrer"
+          aria-label="LeetCode Profile"
         >
           <img
             src={leetcodeIcon}
             alt="LeetCode"
-            className="w-6 h-6 hover:scale-110 transition-all"
+            className="w-6 h-6 hover:scale-110 transition-transform"
+            loading="lazy"
           />
         </a>
         <a
           href="https://www.geeksforgeeks.org/user/mdgulfam0505/"
           target="_blank"
           rel="noreferrer"
+          aria-label="GeeksforGeeks Profile"
         >
           <img
             src={gfgIcon}
             alt="GFG"
-            className="w-6 h-6 hover:scale-110 transition-all"
+            className="w-6 h-6 hover:scale-110 transition-transform"
+            loading="lazy"
           />
         </a>
       </div>
 
       {/* Grid Layout */}
-      <div className="relative z-10 w-full max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Text Content */}
-        <div className="space-y-6">
+        <div className="space-y-6 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
           <motion.h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500"
+            className="
+              text-3xl 
+              sm:text-4xl 
+              md:text-5xl 
+              lg:text-6xl 
+              font-extrabold 
+              text-transparent 
+              bg-clip-text 
+              bg-gradient-to-r 
+              from-yellow-400 
+              to-orange-500
+            "
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -1358,7 +1541,7 @@ const Hero = () => {
             Software Engineer
           </motion.h1>
 
-          <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
             I design and develop high-performance web & mobile applications
             using modern stacks like React, Node.js, and MongoDB. Specializing
             in AI/ML-powered solutions, I handle end-to-end development — from
@@ -1367,7 +1550,7 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
             <motion.a
               whileHover={{ scale: 1.05 }}
               href="/resume.pdf"
@@ -1391,35 +1574,48 @@ const Hero = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="relative flex justify-center lg:justify-end"
+          className="flex justify-center lg:justify-end"
         >
-          <div className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-black p-6 rounded-3xl shadow-2xl border border-yellow-400/20 overflow-hidden w-[350px] sm:w-[400px] lg:w-[440px]">
-            {/* Decorative Gradient Ring */}
-            <div className="absolute inset-0 rounded-3xl border-2 border-transparent "></div>
-
-            {/* Profile Image */}
-            {/* <motion.img
-              src={profileImage}
-              alt="Md Gulfam"
-              className="relative z-10 w-full rounded-3xl object-cover"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity }}
-            /> */}
-
-            {/* Profile Image */}
+          <div
+            className="
+              relative 
+              bg-gradient-to-b 
+              from-gray-900 
+              via-gray-800 
+              to-black 
+              p-6 
+              rounded-3xl 
+              shadow-2xl 
+              border border-yellow-400/20 
+              overflow-hidden
+              w-[250px] 
+              sm:w-[300px] 
+              md:w-[350px] 
+              lg:w-[440px]
+            "
+          >
             <motion.div
-              className="relative z-10 w-full rounded-full p-2"
+              className="relative rounded-full p-2 mx-auto"
               style={{
-                backgroundColor: "#ffffff", // choose a contrasting color (can replace with hex or Tailwind)
+                backgroundColor: "#ffffff",
                 boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+                width: "calc(100% - 2rem)", // keeps padding space inside container
+                aspectRatio: "1 / 1",
               }}
-              animate={{ y: [0, -10, 0] }}
+              animate={
+                shouldReduceMotion
+                  ? {}
+                  : { y: [0, -10, 0] }
+              }
               transition={{ duration: 6, repeat: Infinity }}
             >
               <img
                 src={profileImage}
                 alt="Md Gulfam"
                 className="rounded-full object-cover w-full h-full"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
               />
             </motion.div>
           </div>
